@@ -21,12 +21,12 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div className="w-full mx-auto px-6 md:px-12 lg:px-20 relative z-10">
                     <div className="max-w-2xl">
                         <span className="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full font-bold text-sm mb-4 uppercase tracking-wider">
                             100% Organic & Fresh
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
                             Fresh Groceries <br />
                             <span className="text-primary-600 tracking-tight">Delivered to Your Doorstep</span>
                         </h1>

@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, Phone, ArrowLeft, ArrowRight, UserPlus, LogIn, Github, Chrome } from 'lucide-react';
+import { Mail, Lock, Phone, ArrowLeft, ArrowRight, UserPlus, LogIn } from 'lucide-react';
+
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
     const [isLogin, setIsLogin] = useState(true);
     const navigate = useNavigate();
+    const { login } = useAuth();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        // Simulate login
+        login({ name: 'User', email: 'user@example.com' });
+        navigate('/');
+    };
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -38,7 +48,7 @@ const Login = () => {
                         {isLogin ? 'Welcome Back!' : 'Create Account'}
                     </h2>
 
-                    <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); navigate('/'); }}>
+                    <form className="space-y-6" onSubmit={handleLogin}>
                         {!isLogin && (
                             <div className="space-y-2">
                                 <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Full Name</label>
@@ -80,23 +90,7 @@ const Login = () => {
                         </button>
                     </form>
 
-                    <div className="mt-10 relative">
-                        <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-gray-100"></div>
-                        </div>
-                        <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-white text-gray-400 font-bold uppercase tracking-widest">Or continue with</span>
-                        </div>
-                    </div>
 
-                    <div className="mt-8 grid grid-cols-2 gap-4">
-                        <button className="flex justify-center items-center py-4 border-2 border-gray-100 rounded-2xl hover:bg-gray-50 transition-colors font-bold text-gray-600">
-                            <Chrome className="h-5 w-5 mr-3 text-red-500" /> Google
-                        </button>
-                        <button className="flex justify-center items-center py-4 border-2 border-gray-100 rounded-2xl hover:bg-gray-50 transition-colors font-bold text-gray-600">
-                            <Github className="h-5 w-5 mr-3 text-gray-900" /> Github
-                        </button>
-                    </div>
                 </div>
 
                 <div className="mt-8 text-center">

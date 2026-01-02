@@ -1,10 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingCart, Heart, Eye } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const ProductCard = ({ product }) => {
     const { addToCart } = useCart();
+    const { isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+
+    const handleAddToCart = () => {
+        if (!isAuthenticated) {
+            navigate('/login');
+        } else {
+            addToCart(product);
+        }
+    };
 
     return (
         <div className="card group relative">
@@ -41,7 +52,7 @@ const ProductCard = ({ product }) => {
                     )}
                 </div>
                 <button
-                    onClick={() => addToCart(product)}
+                    onClick={handleAddToCart}
                     className="w-full bg-primary-100 hover:bg-primary-500 text-primary-700 hover:text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                     <ShoppingCart className="h-5 w-5" />

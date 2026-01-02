@@ -2,10 +2,20 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Minus, Plus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const Cart = () => {
     const { cart, removeFromCart, updateQuantity, totalPrice } = useCart();
+    const { isAuthenticated } = useAuth();
     const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        if (!isAuthenticated) {
+            navigate('/login');
+        } else {
+            navigate('/checkout');
+        }
+    };
 
     if (cart.length === 0) {
         return (
@@ -92,7 +102,7 @@ const Cart = () => {
 
                             <div className="space-y-4">
                                 <button
-                                    onClick={() => navigate('/checkout')}
+                                    onClick={handleCheckout}
                                     className="w-full btn-primary py-4 text-xl flex items-center justify-center space-x-3"
                                 >
                                     <span>Proceed to Checkout</span>

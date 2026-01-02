@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { ShoppingCart, Heart, Share2, Star, Minus, Plus, Truck, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { products } from '../data';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import ProductCard from '../components/ProductCard';
 
 const ProductDetails = () => {
     const { id } = useParams();
     const { addToCart } = useCart();
+    const { isAuthenticated } = useAuth();
+    const navigate = useNavigate();
     const product = products.find((p) => p.id === parseInt(id));
     const [quantity, setQuantity] = useState(1);
+
+    const handleAddToCart = () => {
+        if (!isAuthenticated) {
+            navigate('/login');
+        } else {
+            for (let i = 0; i < quantity; i++) addToCart(product);
+        }
+    };
 
     if (!product) {
         return (
@@ -102,9 +113,7 @@ const ProductDetails = () => {
                             </div>
 
                             <button
-                                onClick={() => {
-                                    for (let i = 0; i < quantity; i++) addToCart(product);
-                                }}
+                                onClick={handleAddToCart}
                                 className="btn-primary flex-grow h-14 w-full flex items-center justify-center space-x-3 text-lg"
                             >
                                 <ShoppingCart className="h-6 w-6" />
