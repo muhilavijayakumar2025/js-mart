@@ -81,11 +81,18 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                         {categories.map((cat) => (
-                            <Link key={cat.id} to={`/shop?category=${cat.name}`} className="group">
-                                <div className={`aspect-square rounded-2xl ${cat.color} flex flex-col items-center justify-center p-6 group-hover:shadow-lg transition-all duration-300 border-2 border-transparent group-hover:border-primary-500`}>
-                                    <img src={cat.image} className="w-full h-full object-cover rounded-xl mb-4 hidden group-hover:block transition-all shadow-md" alt="" />
-                                    <span className="text-4xl mb-3 block group-hover:hidden">{cat.icon}</span>
-                                    <span className={`font-bold text-center ${cat.text}`}>{cat.name}</span>
+                            <Link key={cat.id} to={`/shop?category=${cat.name}`} className="group block h-full">
+                                <div className={`aspect-square rounded-2xl ${cat.color} relative overflow-hidden flex flex-col items-center justify-center p-6 group-hover:shadow-lg transition-all duration-300 border-2 border-transparent group-hover:border-primary-500 h-full`}>
+                                    <div className="relative z-10 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                                        <span className="text-4xl mb-3">{cat.icon}</span>
+                                        <span className={`font-bold text-center ${cat.text}`}>{cat.name}</span>
+                                    </div>
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <img src={cat.image} className="w-full h-full object-cover" alt={cat.name} />
+                                        <div className="absolute inset-x-0 bottom-0 bg-black/50 backdrop-blur-sm p-2 text-center">
+                                            <span className="text-white font-bold text-sm tracking-wide">{cat.name}</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </Link>
                         ))}
@@ -95,22 +102,22 @@ const Home = () => {
 
             {/* Today's Offers */}
             <section className="py-20 bg-primary-900 text-white relative overflow-hidden">
-                <div className="absolute right-0 top-0 opacity-10">
-                    <ShoppingCart className="h-96 w-96 transform translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute -right-20 -top-20 opacity-10 pointer-events-none">
+                    <ShoppingCart className="h-96 w-96 rotate-[-15deg]" />
                 </div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-extrabold mb-4">Today's Special Offers</h2>
                         <p className="text-primary-200 text-lg">Don't miss out on these limited time deals</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
-                            <span className="bg-yellow-400 text-black font-bold px-3 py-1 rounded-full text-sm mb-4 inline-block">Flash Sale</span>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 h-full flex flex-col">
+                            <span className="bg-yellow-400 text-black font-bold px-3 py-1 rounded-full text-sm mb-4 inline-block w-max">Flash Sale</span>
                             <h3 className="text-2xl font-bold mb-2">Up to 50% OFF</h3>
-                            <p className="text-primary-100 mb-6">On all seasonal vegetables this weekend only.</p>
-                            <button className="bg-white text-primary-900 px-6 py-2 rounded-full font-bold hover:bg-primary-100 transition-colors">Grab Now</button>
+                            <p className="text-primary-100 mb-6 flex-grow">On all seasonal vegetables this weekend only.</p>
+                            <button className="bg-white text-primary-900 px-6 py-2 rounded-full font-bold hover:bg-primary-100 transition-colors w-full sm:w-auto">Grab Now</button>
                         </div>
-                        <div className="bg-primary-500 p-8 rounded-3xl shadow-2xl scale-105 border-4 border-white/20">
+                        <div className="bg-primary-500 p-8 rounded-3xl shadow-2xl md:scale-110 border-4 border-white/20 z-10 h-full flex flex-col bg-gradient-to-br from-primary-500 to-primary-600">
                             <span className="bg-white text-primary-600 font-bold px-3 py-1 rounded-full text-sm mb-4 inline-block">Best Value</span>
                             <h3 className="text-2xl font-bold mb-2">Combo Pack</h3>
                             <p className="text-white mb-6">Family vegetable pack (5kg) for just $19.99</p>

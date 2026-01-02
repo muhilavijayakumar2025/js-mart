@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Search, Menu, X, Leaf } from 'lucide-react';
+import { ShoppingCart, User, Search, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+
+import logo from '../assets/JS Logo_Au-01.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +16,7 @@ const Navbar = () => {
                 <div className="flex justify-between h-20">
                     <div className="flex items-center">
                         <Link to="/" className="flex items-center space-x-2">
-                            <Leaf className="h-8 w-8 text-primary-600" />
-                            <span className="text-2xl font-extrabold text-gray-900 tracking-tight">
-                                JS<span className="text-primary-600">Mart</span>
-                            </span>
+                            <img src={logo} alt="JS Mart Logo" className="h-16 w-auto object-contain" />
                         </Link>
                     </div>
 

@@ -7,7 +7,7 @@ const About = () => {
             {/* Hero Section */}
             <section className="relative py-24 bg-primary-900 text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
-                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="" className="w-full h-full object-cover" />
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1920&q=80" alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold mb-4 uppercase tracking-[0.2em]">Our Story</span>
@@ -25,7 +25,7 @@ const About = () => {
                         <div className="lg:w-1/2 relative">
                             <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary-100 rounded-full -z-10 animate-pulse"></div>
                             <img
-                                src="https://images.unsplash.com/photo-1495480137289-bd273dde776b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                src="https://images.unsplash.com/photo-1578916171728-56685ff8d4bf?auto=format&fit=crop&w=800&q=80"
                                 alt="Our Shop"
                                 className="rounded-[3rem] shadow-2xl relative z-10 border-8 border-white"
                             />

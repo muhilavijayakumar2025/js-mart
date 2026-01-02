@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Leaf } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+
+import logo from '../assets/JS Logo_Au-01.png';
 
 const Footer = () => {
     return (
@@ -10,10 +12,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <div className="flex items-center space-x-2 mb-6">
-                            <Leaf className="h-8 w-8 text-primary-500" />
-                            <span className="text-2xl font-bold tracking-tight">
-                                JS<span className="text-primary-500">Mart</span>
-                            </span>
+                            <img src={logo} alt="JS Mart Logo" className="h-16 w-auto object-contain" />
                         </div>
                         <p className="text-gray-400 mb-6">
                             Your neighborhood grocery store bringing fresh vegetables, fruits, and essentials directly to your doorstep.
