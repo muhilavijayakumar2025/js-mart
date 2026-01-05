@@ -1,138 +1,97 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Filter, Search, ChevronDown } from 'lucide-react';
-import { products, categories } from '../data';
-import ProductCard from '../components/ProductCard';
+import { Link } from 'react-router-dom';
+import { ShoppingBag, Sparkles, Package, TrendingUp, Gift, ArrowLeft, Home } from 'lucide-react';
 
 const Shop = () => {
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const categoryQuery = queryParams.get('category');
-
-    const [selectedCategory, setSelectedCategory] = useState(categoryQuery || 'All');
-    const [searchQuery, setSearchQuery] = useState('');
-    const [sortedProducts, setSortedProducts] = useState(products);
-    const [sortBy, setSortBy] = useState('featured');
-
-    useEffect(() => {
-        let filtered = products;
-
-        if (selectedCategory !== 'All') {
-            filtered = filtered.filter(p => p.category === selectedCategory);
-        }
-
-        if (searchQuery) {
-            filtered = filtered.filter(p =>
-                p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                p.category.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-        }
-
-        if (sortBy === 'price-low') {
-            filtered.sort((a, b) => a.price - b.price);
-        } else if (sortBy === 'price-high') {
-            filtered.sort((a, b) => b.price - a.price);
-        }
-
-        setSortedProducts([...filtered]);
-    }, [selectedCategory, searchQuery, sortBy]);
-
     return (
-        <div className="bg-gray-50 min-h-screen py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className="mb-12 text-center">
-                    <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Our Fresh Collection</h1>
-                    <p className="text-gray-600 text-lg">Pure, organic, and straight from the source</p>
-                </div>
+        <div className="bg-white min-h-screen py-12 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <Link to="/" className="flex items-center text-gray-600 hover:text-primary-600 mb-8 transition-colors group">
+                    <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+                    <span className="font-bold">Back to Home</span>
+                </Link>
 
-                <div className="flex flex-col lg:flex-row gap-8">
-                    {/* Filters Sidebar */}
-                    <aside className="lg:w-1/4 space-y-8">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                            <div className="flex items-center space-x-2 mb-6">
-                                <Search className="h-5 w-5 text-primary-600" />
-                                <h3 className="font-bold text-lg text-gray-900">Search Products</h3>
+                {/* Coming Soon Content */}
+                <div className="flex flex-col items-center justify-center min-h-[70vh] text-center">
+                    {/* Animated Icon */}
+                    <div className="relative mb-8">
+                        <div className="absolute inset-0 bg-green-500 rounded-full blur-3xl opacity-50 animate-pulse"></div>
+                        <div className="relative bg-gradient-to-br from-green-400 to-green-600 p-8 rounded-full shadow-2xl transform hover:scale-110 transition-transform duration-500">
+                            <ShoppingBag className="h-20 w-20 text-white animate-bounce" style={{ animationDuration: '2s' }} />
+                        </div>
+                    </div>
+
+                    {/* Main Heading */}
+                    <div className="mb-6">
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                            <Sparkles className="h-8 w-8 text-yellow-400 animate-pulse" />
+                            <h1 className="text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 animate-pulse">
+                                Coming Soon
+                            </h1>
+                            <Sparkles className="h-8 w-8 text-yellow-400 animate-pulse" style={{ animationDelay: '0.5s' }} />
+                        </div>
+                        <p className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                            Shop Page
+                        </p>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xl text-gray-600 max-w-2xl mb-12 leading-relaxed">
+                        We're curating an incredible shopping experience for you!
+                        <br />
+                        <span className="text-green-600 font-bold">Get ready to explore amazing products.</span>
+                    </p>
+
+                    {/* Feature Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full mb-12">
+                        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                                <Package className="h-8 w-8 text-white" />
                             </div>
-                            <div className="relative">
-                                <input
-                                    type="text"
-                                    placeholder="What are you looking for?"
-                                    className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                            </div>
+                            <h3 className="text-gray-900 font-bold text-lg mb-2">Wide Selection</h3>
+                            <p className="text-gray-600 text-sm">Thousands of products to choose from</p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                            <div className="flex items-center space-x-2 mb-6">
-                                <Filter className="h-5 w-5 text-primary-600" />
-                                <h3 className="font-bold text-lg text-gray-900">Categories</h3>
+                        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                                <TrendingUp className="h-8 w-8 text-white" />
                             </div>
-                            <div className="space-y-3">
-                                <button
-                                    onClick={() => setSelectedCategory('All')}
-                                    className={`w-full text-left px-4 py-3 rounded-xl transition-all font-medium ${selectedCategory === 'All' ? 'bg-primary-600 text-white shadow-md' : 'bg-gray-50 text-gray-600 hover:bg-primary-50'}`}
-                                >
-                                    All Categories
-                                </button>
-                                {categories.map((cat) => (
-                                    <button
-                                        key={cat.id}
-                                        onClick={() => setSelectedCategory(cat.name)}
-                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all font-medium ${selectedCategory === cat.name ? 'bg-primary-600 text-white shadow-md' : 'bg-gray-50 text-gray-600 hover:bg-primary-50'}`}
-                                    >
-                                        <span className="mr-2">{cat.icon}</span>
-                                        {cat.name}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </aside>
-
-                    {/* Product Grid */}
-                    <div className="lg:w-3/4">
-                        <div className="flex flex-col sm:flex-row justify-between items-center bg-white p-4 rounded-2xl shadow-sm mb-8 gap-4 border border-gray-100">
-                            <p className="text-gray-500 font-medium">Showing <span className="text-gray-900 font-bold">{sortedProducts.length}</span> products</p>
-                            <div className="flex items-center space-x-4">
-                                <span className="text-gray-500 font-medium">Sort by:</span>
-                                <div className="relative">
-                                    <select
-                                        className="appearance-none bg-gray-50 border border-gray-200 rounded-xl px-10 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer font-medium text-gray-700"
-                                        value={sortBy}
-                                        onChange={(e) => setSortBy(e.target.value)}
-                                    >
-                                        <option value="featured">Featured</option>
-                                        <option value="price-low">Price: Low to High</option>
-                                        <option value="price-high">Price: High to Low</option>
-                                    </select>
-                                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
-                                </div>
-                            </div>
+                            <h3 className="text-gray-900 font-bold text-lg mb-2">Best Deals</h3>
+                            <p className="text-gray-600 text-sm">Exclusive offers and discounts</p>
                         </div>
 
-                        {sortedProducts.length > 0 ? (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {sortedProducts.map((product) => (
-                                    <ProductCard key={product.id} product={product} />
-                                ))}
+                        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            <div className="bg-gradient-to-br from-lime-500 to-lime-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                                <Gift className="h-8 w-8 text-white" />
                             </div>
-                        ) : (
-                            <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-gray-100">
-                                <div className="bg-gray-100 h-24 w-24 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Search className="h-10 w-10 text-gray-400" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-2">No products found</h3>
-                                <p className="text-gray-500">We couldn't find anything matching your filters. Try a different search.</p>
-                                <button
-                                    onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-                                    className="mt-6 text-primary-600 font-bold hover:underline"
-                                >
-                                    Clear all filters
-                                </button>
-                            </div>
-                        )}
+                            <h3 className="text-gray-900 font-bold text-lg mb-2">Special Rewards</h3>
+                            <p className="text-gray-600 text-sm">Earn points with every purchase</p>
+                        </div>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                        <Link
+                            to="/"
+                            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                        >
+                            <Home className="h-6 w-6" />
+                            Back to Home
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className="bg-green-100 hover:bg-green-200 border border-green-300 text-green-700 font-bold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                        >
+                            <Sparkles className="h-6 w-6" />
+                            Get Notified
+                        </Link>
+                    </div>
+
+                    {/* Progress Indicator */}
+                    <div className="mt-16 max-w-md w-full">
+                        <div className="bg-white/10 backdrop-blur-lg rounded-full h-3 overflow-hidden">
+                            <div className="bg-gradient-to-r from-green-500 via-emerald-500 to-lime-500 h-full rounded-full animate-pulse" style={{ width: '70%' }}></div>
+                        </div>
+                        <p className="text-gray-400 text-sm mt-3 font-medium">Development Progress: 70%</p>
                     </div>
                 </div>
             </div>

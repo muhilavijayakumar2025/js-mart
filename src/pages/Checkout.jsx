@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CreditCard, Truck, MapPin, CheckCircle2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const Checkout = () => {
     const { cart, totalPrice, clearCart } = useCart();
+    const { isAuthenticated } = useAuth();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
@@ -16,6 +18,19 @@ const Checkout = () => {
         paymentMethod: 'cod',
     });
     const [isSuccess, setIsSuccess] = useState(false);
+
+    // Redirect to login if not authenticated
+    useEffect(() => {
+        if (!isAuthenticated) {
+            localStorage.setItem('returnPath', '/checkout');
+            navigate('/login');
+        }
+    }, [isAuthenticated, navigate]);
+
+    // Don't render checkout if not authenticated
+    if (!isAuthenticated) {
+        return null;
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -18,9 +18,8 @@ const Footer = () => {
                             Your neighborhood grocery store bringing fresh vegetables, fruits, and essentials directly to your doorstep.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"><Facebook className="h-5 w-5" /></a>
-                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"><Twitter className="h-5 w-5" /></a>
-                            <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"><Instagram className="h-5 w-5" /></a>
+                            <a href="https://www.facebook.com/profile.php?id=61585605406324" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"><Facebook className="h-5 w-5" /></a>
+                            <a href="https://www.instagram.com/js_mart_26" target="_blank" rel="noopener noreferrer" className="bg-gray-800 p-2 rounded-full hover:bg-primary-600 transition-colors"><Instagram className="h-5 w-5" /></a>
                         </div>
                     </div>
 
@@ -52,7 +51,7 @@ const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start space-x-3">
                                 <MapPin className="h-5 w-5 text-primary-500 shrink-0" />
-                                <span className="text-gray-400">123 Grocery Lane, Fresh City, FC 12345</span>
+                                <span className="text-gray-400">126 Brisbane Street, Dubbo NSW</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Phone className="h-5 w-5 text-primary-500 shrink-0" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Minus, Plus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -9,13 +9,27 @@ const Cart = () => {
     const { isAuthenticated } = useAuth();
     const navigate = useNavigate();
 
+    // Redirect to login if not authenticated
+    useEffect(() => {
+        if (!isAuthenticated) {
+            localStorage.setItem('returnPath', '/cart');
+            navigate('/login');
+        }
+    }, [isAuthenticated, navigate]);
+
     const handleCheckout = () => {
         if (!isAuthenticated) {
+            localStorage.setItem('returnPath', '/checkout');
             navigate('/login');
         } else {
             navigate('/checkout');
         }
     };
+
+    // Don't render cart if not authenticated
+    if (!isAuthenticated) {
+        return null;
+    }
 
     if (cart.length === 0) {
         return (

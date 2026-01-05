@@ -27,6 +27,7 @@ const Home = () => {
                             100% Organic & Fresh
                         </span>
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+                            <span className="text-primary-600">JS Mart</span> - <br />
                             Fresh Groceries <br />
                             <span className="text-primary-600 tracking-tight">Delivered to Your Doorstep</span>
                         </h1>
@@ -120,13 +121,13 @@ const Home = () => {
                         <div className="bg-primary-500 p-8 rounded-3xl shadow-2xl md:scale-110 border-4 border-white/20 z-10 h-full flex flex-col bg-gradient-to-br from-primary-500 to-primary-600">
                             <span className="bg-white text-primary-600 font-bold px-3 py-1 rounded-full text-sm mb-4 inline-block">Best Value</span>
                             <h3 className="text-2xl font-bold mb-2">Combo Pack</h3>
-                            <p className="text-white mb-6">Family vegetable pack (5kg) for just $19.99</p>
+                            <p className="text-white mb-6">Family vegetable pack (5kg) - Special offer</p>
                             <button className="bg-white text-primary-600 px-6 py-2 rounded-full font-bold hover:bg-primary-100 transition-colors">Order Combo</button>
                         </div>
                         <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
                             <span className="bg-green-400 text-black font-bold px-3 py-1 rounded-full text-sm mb-4 inline-block">New arrival</span>
                             <h3 className="text-2xl font-bold mb-2">Free Delivery</h3>
-                            <p className="text-primary-100 mb-6">On your first 3 orders above $30. Use code: FRESH</p>
+                            <p className="text-primary-100 mb-6">On your first 3 orders. Use code: FRESH</p>
                             <button className="bg-white text-primary-900 px-6 py-2 rounded-full font-bold hover:bg-primary-100 transition-colors">Start Shopping</button>
                         </div>
                     </div>

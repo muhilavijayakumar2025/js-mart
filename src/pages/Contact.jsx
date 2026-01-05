@@ -64,14 +64,6 @@ const Contact = () => {
                                 action: "Send email"
                             },
                             {
-                                icon: <MessageSquare className="w-6 h-6" />,
-                                color: "bg-green-50 text-green-600",
-                                title: 'Live Chat',
-                                value: 'WhatsApp Support',
-                                desc: 'Instant responses 24/7',
-                                action: "Start chat"
-                            },
-                            {
                                 icon: <Clock className="w-6 h-6" />,
                                 color: "bg-orange-50 text-orange-600",
                                 title: 'Working Hours',
@@ -180,7 +172,7 @@ const Contact = () => {
                                 <MapPin className="w-8 h-8" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-2">Visit Our Store</h3>
-                            <p className="text-gray-500 mb-6">123 Grocery Lane, Fresh City, FC 12345</p>
+                            <p className="text-gray-500 mb-6">126 Brisbane Street, Dubbo NSW</p>
                             <button className="text-primary-600 font-bold hover:text-primary-700 inline-flex items-center">
                                 Get Directions <ArrowRight className="w-4 h-4 ml-1" />
                             </button>
