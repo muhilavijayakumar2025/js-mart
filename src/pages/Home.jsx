@@ -151,26 +151,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Customer Reviews */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center mb-16">What Our Customers Say</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {reviews.map((review) => (
-                            <div key={review.id} className="bg-white p-8 rounded-2xl shadow-sm text-center">
-                                <img src={review.image} alt={review.name} className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-primary-100" />
-                                <div className="flex justify-center mb-4">
-                                    {[...Array(review.rating)].map((_, i) => (
-                                        <Star key={i} className="h-5 w-5 text-yellow-500 fill-current" />
-                                    ))}
-                                </div>
-                                <p className="text-gray-600 italic mb-6">"{review.comment}"</p>
-                                <h4 className="font-bold text-lg">{review.name}</h4>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* Call to Action */}
             <section className="py-20 bg-white">

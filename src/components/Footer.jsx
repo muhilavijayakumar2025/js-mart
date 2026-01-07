@@ -12,7 +12,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <div className="flex items-center space-x-2 mb-6">
-                            <img src={logo} alt="JS Mart Logo" className="h-16 w-auto object-contain" />
+                            <img src={logo} alt="JS Mart Logo" className="h-32 w-auto object-contain" />
                         </div>
                         <p className="text-gray-400 mb-6">
                             Your neighborhood grocery store bringing fresh vegetables, fruits, and essentials directly to your doorstep.
@@ -53,18 +53,14 @@ const Footer = () => {
                                 <MapPin className="h-5 w-5 text-primary-500 shrink-0" />
                                 <span className="text-gray-400">126 Brisbane Street, Dubbo NSW</span>
                             </li>
-                            <li className="flex items-center space-x-3">
-                                <Phone className="h-5 w-5 text-primary-500 shrink-0" />
-                                <span className="text-gray-400">+1 (555) 123-4567</span>
-                            </li>
+
                             <li className="flex items-center space-x-3">
                                 <Mail className="h-5 w-5 text-primary-500 shrink-0" />
-                                <span className="text-gray-400">support@jsmart.com</span>
+                                <span className="text-gray-400">info@jsmart.com.au</span>
                             </li>
                         </ul>
                     </div>
                 </div>
-
                 <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-500">
                     <p>&copy; {new Date().getFullYear()} JS Mart. All rights reserved.</p>
                 </div>

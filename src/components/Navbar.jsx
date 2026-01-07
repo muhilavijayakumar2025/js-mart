@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Search, Menu, X } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { Menu, X } from 'lucide-react';
+
 
 import logo from '../assets/JS Logo_Au-01.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { totalItems } = useCart();
+
     const navigate = useNavigate();
 
     return (
@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className="backdrop-blur-md bg-white/80 shadow-sm sticky top-0 z-50 border-b border-gray-100/50 transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20">
-                    <div className="flex items-center -ml-8 md:-ml-20">
+                    <div className="flex items-center flex-shrink-0">
                         <Link to="/" className="flex items-center space-x-2">
                             <img src={logo} alt="JS Mart Logo" className="h-16 w-auto object-contain" />
                         </Link>
@@ -30,20 +30,9 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-12">
-                        <button className="text-gray-700 hover:text-primary-600 transition-colors">
-                            <Search className="h-6 w-6" />
+                        <button onClick={() => navigate('/login')} className="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors font-medium">
+                            Sign In
                         </button>
-                        <button onClick={() => navigate('/login')} className="text-gray-700 hover:text-primary-600 transition-colors">
-                            <User className="h-6 w-6" />
-                        </button>
-                        <Link to="/cart" className="relative group">
-                            <ShoppingCart className="h-6 w-6 text-gray-700 group-hover:text-primary-600 transition-colors" />
-                            {totalItems > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-primary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                                    {totalItems}
-                                </span>
-                            )}
-                        </Link>
                     </div>
 
                     {/* Mobile menu button */}
@@ -66,16 +55,10 @@ const Navbar = () => {
                         <Link to="/shop" className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium">Shop</Link>
                         <Link to="/about" className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium">About</Link>
                         <Link to="/contact" className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium">Contact</Link>
-                        <div className="flex items-center space-x-4 px-3 py-2">
-                            <button onClick={() => navigate('/login')}><User className="h-6 w-6 text-gray-700" /></button>
-                            <Link to="/cart" className="relative">
-                                <ShoppingCart className="h-6 w-6 text-gray-700" />
-                                {totalItems > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-primary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                                        {totalItems}
-                                    </span>
-                                )}
-                            </Link>
+                        <div className="px-3 py-2">
+                            <button onClick={() => navigate('/login')} className="w-full bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors font-medium text-center">
+                                Sign In
+                            </button>
                         </div>
                     </div>
                 </div>

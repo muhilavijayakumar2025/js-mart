@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, MessageSquare, Send, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -6,6 +6,33 @@ const Contact = () => {
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
+    };
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // In a real application, you would send this data to a backend server
+        console.log('Form Data:', formData);
+
+        // Simulate success
+        alert("Thank you! Your message has been sent successfully.");
+
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        });
     };
 
     return (
@@ -47,19 +74,12 @@ const Contact = () => {
                     {/* Contact Info Cards */}
                     <div className="lg:col-span-1 space-y-6">
                         {[
-                            {
-                                icon: <Phone className="w-6 h-6" />,
-                                color: "bg-blue-50 text-blue-600",
-                                title: 'Call Us Directly',
-                                value: '+1 (555) 123-4567',
-                                desc: 'Mon-Sun, 8am - 10pm EST',
-                                action: "Call now"
-                            },
+
                             {
                                 icon: <Mail className="w-6 h-6" />,
                                 color: "bg-red-50 text-red-600",
                                 title: 'Email Support',
-                                value: 'hello@jsmart.com',
+                                value: 'info@jsmart.com.au',
                                 desc: 'We reply within 2 hours',
                                 action: "Send email"
                             },
@@ -112,41 +132,57 @@ const Contact = () => {
                                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Send us a Message</h2>
                                 <p className="text-gray-500 mb-10">We'd love to hear from you. Fill out the form below.</p>
 
-                                <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
                                     <div className="space-y-2">
                                         <label className="text-sm font-semibold text-gray-700 ml-1">Full Name</label>
                                         <input
                                             type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
                                             className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200"
                                             placeholder="John Doe"
+                                            required
                                         />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-sm font-semibold text-gray-700 ml-1">Email Address</label>
                                         <input
                                             type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200"
                                             placeholder="john@example.com"
+                                            required
                                         />
                                     </div>
                                     <div className="md:col-span-2 space-y-2">
                                         <label className="text-sm font-semibold text-gray-700 ml-1">Subject</label>
                                         <input
                                             type="text"
+                                            name="subject"
+                                            value={formData.subject}
+                                            onChange={handleChange}
                                             className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200"
                                             placeholder="How can we help?"
+                                            required
                                         />
                                     </div>
                                     <div className="md:col-span-2 space-y-2">
                                         <label className="text-sm font-semibold text-gray-700 ml-1">Message</label>
                                         <textarea
                                             rows="5"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
                                             className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200 resize-none"
                                             placeholder="Tell us more about your inquiry..."
+                                            required
                                         ></textarea>
                                     </div>
                                     <div className="md:col-span-2 pt-4">
-                                        <button className="w-full md:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex items-center justify-center space-x-2">
+                                        <button type="submit" className="w-full md:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex items-center justify-center space-x-2">
                                             <span>Send Message</span>
                                             <Send className="w-5 h-5" />
                                         </button>
@@ -156,29 +192,6 @@ const Contact = () => {
                         </div>
                     </motion.div>
                 </div>
-            </div>
-
-            {/* Map Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="relative bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden h-[400px]"
-                >
-                    <div className="absolute inset-0 bg-gray-100 flex items-center justify-center bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-74.006,40.7128,12,0/800x400?access_token=YOUR_API_KEY')] bg-cover bg-center">
-                        <div className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl text-center max-w-sm mx-4 transform transition-transform hover:scale-105 duration-300">
-                            <div className="bg-primary-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600">
-                                <MapPin className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Visit Our Store</h3>
-                            <p className="text-gray-500 mb-6">126 Brisbane Street, Dubbo NSW</p>
-                            <button className="text-primary-600 font-bold hover:text-primary-700 inline-flex items-center">
-                                Get Directions <ArrowRight className="w-4 h-4 ml-1" />
-                            </button>
-                        </div>
-                    </div>
-                </motion.div>
             </div>
         </div>
     );
