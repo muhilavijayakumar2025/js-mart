@@ -73,7 +73,7 @@ const Checkout = () => {
 
     return (
         <div className="bg-gray-50 min-h-screen py-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="w-full px-12">
                 <h1 className="text-4xl font-extrabold text-gray-900 mb-12">Complete Your Purchase</h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-12">
@@ -94,7 +94,7 @@ const Checkout = () => {
                                         type="text"
                                         name="name"
                                         required
-                                        className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+                                        className="w-full px-12 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
                                         placeholder="Enter your name"
                                         onChange={handleChange}
                                     />
@@ -105,7 +105,7 @@ const Checkout = () => {
                                         type="tel"
                                         name="phone"
                                         required
-                                        className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+                                        className="w-full px-12 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
                                         placeholder="+1 (234) 567-890"
                                         onChange={handleChange}
                                     />
@@ -116,7 +116,7 @@ const Checkout = () => {
                                         type="text"
                                         name="address"
                                         required
-                                        className="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+                                        className="w-full px-12 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
                                         placeholder="House No, Street, Landmark"
                                         onChange={handleChange}
                                     />

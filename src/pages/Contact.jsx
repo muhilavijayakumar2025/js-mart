@@ -42,7 +42,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-90"></div>
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center text-white">
+                <div className="relative w-full px-12 py-24 lg:py-32 text-white">
                     <motion.div
                         initial="hidden"
                         animate="visible"
@@ -69,7 +69,7 @@ const Contact = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-20 relative z-10">
+            <div className="w-full px-12 py-16 -mt-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Contact Info Cards */}
                     <div className="lg:col-span-1 space-y-6">
@@ -182,7 +182,7 @@ const Contact = () => {
                                         ></textarea>
                                     </div>
                                     <div className="md:col-span-2 pt-4">
-                                        <button type="submit" className="w-full md:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex items-center justify-center space-x-2">
+                                        <button type="submit" className="w-full md:w-auto px-12 py-4 bg-primary-600 hover:bg-primary-700 text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex items-center justify-center space-x-2">
                                             <span>Send Message</span>
                                             <Send className="w-5 h-5" />
                                         </button>

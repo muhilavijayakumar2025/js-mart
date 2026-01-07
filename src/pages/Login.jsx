@@ -4,14 +4,14 @@ import { UserCircle, Sparkles, Shield, Users, Zap, ArrowLeft, Home } from 'lucid
 const Login = () => {
     return (
         <div className="bg-white min-h-screen py-12 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="w-full px-12 relative z-10">
                 <Link to="/" className="flex items-center text-gray-600 hover:text-primary-600 mb-8 transition-colors group">
                     <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
                     <span className="font-bold">Back to Home</span>
                 </Link>
 
                 {/* Coming Soon Content */}
-                <div className="flex flex-col items-center justify-center min-h-[70vh] text-center">
+                <div className="flex flex-col items-center justify-center min-h-[70vh]">
                     {/* Animated Icon */}
                     <div className="relative mb-8">
                         <div className="absolute inset-0 bg-green-500 rounded-full blur-3xl opacity-50 animate-pulse"></div>
@@ -72,14 +72,14 @@ const Login = () => {
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                         <Link
                             to="/"
-                            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-12 py-4 rounded-2xl shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3"
                         >
                             <Home className="h-6 w-6" />
                             Back to Home
                         </Link>
                         <Link
                             to="/contact"
-                            className="bg-green-100 hover:bg-green-200 border border-green-300 text-green-700 font-bold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                            className="bg-green-100 hover:bg-green-200 border border-green-300 text-green-700 font-bold px-12 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
                         >
                             <Sparkles className="h-6 w-6" />
                             Get Updates

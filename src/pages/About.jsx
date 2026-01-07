@@ -11,8 +11,8 @@ const About = () => {
                 <div className="absolute inset-0 opacity-10">
                     <img src={aboutHero} alt="" className="w-full h-full object-cover" />
                 </div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <span className="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold mb-4 uppercase tracking-[0.2em]">Our Story</span>
+                <div className="w-full px-12 relative z-10">
+                    <span className="inline-block px-12 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold mb-4 uppercase tracking-[0.2em]">Our Story</span>
                     <h1 className="text-5xl md:text-7xl font-black mb-6">Growing With Love & <br /><span className="text-primary-400">Pure Ethics</span></h1>
                     <p className="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed italic">
                         "We believe that everyone deserves access to fresh, healthy, and organic food without any compromises."
@@ -22,7 +22,7 @@ const About = () => {
 
             {/* Intro */}
             <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full px-12">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2 relative">
                             <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary-100 rounded-full -z-10 animate-pulse"></div>
@@ -62,7 +62,7 @@ const About = () => {
 
             {/* Mission & Vision */}
             <section className="py-24 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full px-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100 relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:scale-110 transition-transform">
@@ -95,7 +95,7 @@ const About = () => {
 
             {/* Values */}
             <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="w-full px-12">
                     <h2 className="text-4xl font-extrabold mb-16">The Values We Live By</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
                         {[

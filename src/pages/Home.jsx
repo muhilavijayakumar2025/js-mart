@@ -21,9 +21,9 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
                 </div>
 
-                <div className="w-full mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+                <div className="w-full px-12 relative z-10">
                     <div className="max-w-2xl">
-                        <span className="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full font-bold text-sm mb-4 uppercase tracking-wider">
+                        <span className="inline-block px-12 py-1 bg-primary-100 text-primary-700 rounded-full font-bold text-sm mb-4 uppercase tracking-wider">
                             100% Organic & Fresh
                         </span>
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
@@ -50,7 +50,7 @@ const Home = () => {
 
             {/* Why Choose Us */}
             <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full px-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             { icon: <ShieldCheck className="h-10 w-10 text-primary-600" />, title: 'Fresh Products', desc: 'Sourced daily from local farmers' },
@@ -58,7 +58,7 @@ const Home = () => {
                             { icon: <Truck className="h-10 w-10 text-primary-600" />, title: 'Fast Delivery', desc: 'Get your items in under 2 hours' },
                             { icon: <Star className="h-10 w-10 text-primary-600" />, title: 'Quality Checked', desc: 'Multi-level quality inspection' },
                         ].map((feature, index) => (
-                            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center">
+                            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                                 <div className="flex justify-center mb-4">{feature.icon}</div>
                                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                                 <p className="text-gray-500">{feature.desc}</p>
@@ -70,7 +70,7 @@ const Home = () => {
 
             {/* Categories Preview */}
             <section className="py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full px-12">
                     <div className="flex justify-between items-end mb-12">
                         <div>
                             <h2 className="text-3xl font-bold mb-2">Shop by Category</h2>
@@ -106,8 +106,8 @@ const Home = () => {
                 <div className="absolute -right-20 -top-20 opacity-10 pointer-events-none">
                     <ShoppingCart className="h-96 w-96 rotate-[-15deg]" />
                 </div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16">
+                <div className="w-full px-12 relative z-10">
+                    <div className="mb-16">
                         <h2 className="text-4xl font-extrabold mb-4">Today's Special Offers</h2>
                         <p className="text-primary-200 text-lg">Don't miss out on these limited time deals</p>
                     </div>
@@ -136,7 +136,7 @@ const Home = () => {
 
             {/* Featured Products */}
             <section className="py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full px-12">
                     <div className="flex justify-between items-end mb-12">
                         <div>
                             <h2 className="text-3xl font-bold mb-2">Fresh From Farm</h2>
@@ -155,8 +155,8 @@ const Home = () => {
 
             {/* Call to Action */}
             <section className="py-20 bg-white">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-primary-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+                <div className="w-full px-12">
+                    <div className="bg-primary-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
                         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 relative z-10">Order Now & Get Fresh Items Today!</h2>
                         <p className="text-xl mb-10 text-primary-100 max-w-2xl mx-auto relative z-10">Experience the best quality groceries delivered to your home within hours. First delivery is on us!</p>
