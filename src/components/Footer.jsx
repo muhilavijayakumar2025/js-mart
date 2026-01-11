@@ -70,7 +70,7 @@ const Footer = () => {
                                 <a 
                                     href="#home" 
                                     onClick={(e) => handleSectionClick(e, 'home')}
-                                    className="text-gray-400 hover:text-primary-500 transition-colors cursor-pointer"
+                                    className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors cursor-pointer"
                                 >
                                     Home
                                 </a>
@@ -79,7 +79,7 @@ const Footer = () => {
                                 <a 
                                     href="#products" 
                                     onClick={(e) => handleSectionClick(e, 'products')}
-                                    className="text-gray-400 hover:text-primary-500 transition-colors cursor-pointer"
+                                    className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors cursor-pointer"
                                 >
                                     Products
                                 </a>
@@ -88,7 +88,7 @@ const Footer = () => {
                                 <a 
                                     href="#about" 
                                     onClick={(e) => handleSectionClick(e, 'about')}
-                                    className="text-gray-400 hover:text-primary-500 transition-colors cursor-pointer"
+                                    className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors cursor-pointer"
                                 >
                                     About Us
                                 </a>
@@ -97,7 +97,7 @@ const Footer = () => {
                                 <a 
                                     href="#contact" 
                                     onClick={(e) => handleSectionClick(e, 'contact')}
-                                    className="text-gray-400 hover:text-primary-500 transition-colors cursor-pointer"
+                                    className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors cursor-pointer"
                                 >
                                     Contact
                                 </a>
