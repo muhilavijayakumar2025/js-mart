@@ -54,7 +54,7 @@ const Checkout = () => {
                     </div>
                     <h2 className="text-4xl font-black text-gray-900 mb-4">Order Confirmed!</h2>
                     <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-                        Thank you for shopping with JS Mart. Your fresh items are on their way!
+                        Thank you for shopping with S Mart Australia. Your fresh items are on their way!
                     </p>
                     <div className="bg-gray-50 p-6 rounded-3xl mb-10 text-left border border-gray-100">
                         <p className="font-bold text-gray-900 mb-2">Order ID: #JSM-882234</p>
