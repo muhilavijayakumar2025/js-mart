@@ -23,6 +23,10 @@
   --bg-light: #f9fafb;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-sans bg-white text-gray-900;
 }

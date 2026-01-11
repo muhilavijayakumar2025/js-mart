@@ -11,11 +11,11 @@ const About = () => {
                 <div className="absolute inset-0 opacity-10">
                     <img src={aboutHero} alt="" className="w-full h-full object-cover" />
                 </div>
-                <div className="w-full px-12 relative z-10">
-                    <span className="inline-block px-12 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold mb-4 uppercase tracking-[0.2em]">Our Story</span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6">Growing With Love & <br /><span className="text-primary-400">Pure Ethics</span></h1>
-                    <p className="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed italic">
-                        "We believe that everyone deserves access to fresh, healthy, and organic food without any compromises."
+                <div className="w-full px-12 relative z-10 text-center">
+                    <span className="inline-block px-12 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold mb-4 uppercase tracking-[0.2em]">About Us</span>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6">About <span className="text-primary-400">S Mart Australia</span></h1>
+                    <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
+                        S Mart Australia is your trusted local supermarket bringing together the best of multicultural groceries for Australian communities.
                     </p>
                 </div>
             </section>
@@ -37,9 +37,12 @@ const About = () => {
                             </div>
                         </div>
                         <div className="lg:w-1/2 space-y-8">
-                            <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">We provide fresh and quality groceries sourced directly from farmers.</h2>
+                            <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">Your Trusted Multicultural Grocery Store</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                JS Mart started as a small local fruit stand in 2008 with a simple goal: to connect local farmers with families who care about what they eat. Today, we've grown into a modern grocery destination, but our values remain the same.
+                                From fresh fruits and vegetables to authentic international food items and daily household essentials, we are committed to offering quality products at affordable prices — all in a clean, friendly shopping environment.
+                            </p>
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                Whether you're looking for traditional ingredients or everyday groceries, S Mart Australia makes shopping simple and enjoyable.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[

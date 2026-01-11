@@ -1,38 +1,10 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, MessageSquare, Send, Clock, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
-    };
-
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // In a real application, you would send this data to a backend server
-        console.log('Form Data:', formData);
-
-        // Simulate success
-        alert("Thank you! Your message has been sent successfully.");
-
-        setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-        });
     };
 
     return (
@@ -53,7 +25,7 @@ const Contact = () => {
                             24/7 Support
                         </span>
                         <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
-                            Let's Start a Conversation
+                            Visit Us Today
                         </h1>
                         <p className="text-xl md:text-2xl text-primary-100 max-w-2xl mx-auto font-light">
                             Have questions about our fresh produce or delivery services? We're here to help you every step of the way.
@@ -69,128 +41,62 @@ const Contact = () => {
                 </div>
             </div>
 
-            <div className="w-full px-12 py-16 -mt-20 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {/* Contact Info Cards */}
-                    <div className="lg:col-span-1 space-y-6">
-                        {[
-
-                            {
-                                icon: <Mail className="w-6 h-6" />,
-                                color: "bg-red-50 text-red-600",
-                                title: 'Email Support',
-                                value: 'info@jsmart.com.au',
-                                desc: 'We reply within 2 hours',
-                                action: "Send email"
-                            },
-                            {
-                                icon: <Clock className="w-6 h-6" />,
-                                color: "bg-orange-50 text-orange-600",
-                                title: 'Working Hours',
-                                value: 'Open 24/7',
-                                desc: 'Delivery slots available daily',
-                                action: "View slots"
-                            },
-                        ].map((info, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.2 + (i * 0.1) }}
-                                className="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer"
-                            >
-                                <div className="flex items-start space-x-4">
-                                    <div className={`${info.color} p-3 rounded-xl transition-transform group-hover:scale-110 duration-300`}>
-                                        {info.icon}
-                                    </div>
-                                    <div className="flex-1">
-                                        <h4 className="text-gray-500 font-medium text-sm uppercase tracking-wide mb-1">{info.title}</h4>
-                                        <p className="text-xl font-bold text-gray-900 mb-1">{info.value}</p>
-                                        <div className="flex items-center justify-between mt-3">
-                                            <p className="text-xs text-gray-400 font-medium">{info.desc}</p>
-                                            <span className="text-xs font-semibold text-primary-600 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                                {info.action} <ArrowRight className="w-3 h-3 ml-1" />
-                                            </span>
-                                        </div>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-20 relative z-10">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Contact Details</h2>
+                    <p className="text-xl text-gray-600">Get in touch with us through any of these channels</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {[
+                        {
+                            icon: <MapPin className="w-6 h-6" />,
+                            color: "bg-blue-50 text-blue-600",
+                            title: 'Address',
+                            value: '126 Brisbane Street',
+                            desc: 'Dubbo NSW, Australia',
+                            action: "Get directions"
+                        },
+                        {
+                            icon: <Clock className="w-6 h-6" />,
+                            color: "bg-orange-50 text-orange-600",
+                            title: 'Opening Hours',
+                            value: 'Open daily',
+                            desc: 'Hours coming soon',
+                            action: "View hours"
+                        },
+                        {
+                            icon: <Mail className="w-6 h-6" />,
+                            color: "bg-red-50 text-red-600",
+                            title: 'Email',
+                            value: 'info@jsmart.com.au',
+                            desc: 'We reply within 2 hours',
+                            action: "Send email"
+                        },
+                    ].map((info, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 + (i * 0.1) }}
+                            className="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer"
+                        >
+                            <div className="flex items-start space-x-4">
+                                <div className={`${info.color} p-3 rounded-xl transition-transform group-hover:scale-110 duration-300`}>
+                                    {info.icon}
+                                </div>
+                                <div className="flex-1">
+                                    <h4 className="text-gray-500 font-medium text-sm uppercase tracking-wide mb-1">{info.title}</h4>
+                                    <p className="text-xl font-bold text-gray-900 mb-1">{info.value}</p>
+                                    <div className="flex items-center justify-between mt-3">
+                                        <p className="text-xs text-gray-400 font-medium">{info.desc}</p>
+                                        <span className="text-xs font-semibold text-primary-600 flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                            {info.action} <ArrowRight className="w-3 h-3 ml-1" />
+                                        </span>
                                     </div>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Contact Form */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="lg:col-span-2"
-                    >
-                        <div className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 p-8 md:p-12 border border-gray-100 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-60"></div>
-
-                            <div className="relative">
-                                <h2 className="text-3xl font-bold text-gray-900 mb-2">Send us a Message</h2>
-                                <p className="text-gray-500 mb-10">We'd love to hear from you. Fill out the form below.</p>
-
-                                <form className="grid grid-cols-1 md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-semibold text-gray-700 ml-1">Full Name</label>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200"
-                                            placeholder="John Doe"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-semibold text-gray-700 ml-1">Email Address</label>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200"
-                                            placeholder="john@example.com"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="md:col-span-2 space-y-2">
-                                        <label className="text-sm font-semibold text-gray-700 ml-1">Subject</label>
-                                        <input
-                                            type="text"
-                                            name="subject"
-                                            value={formData.subject}
-                                            onChange={handleChange}
-                                            className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200"
-                                            placeholder="How can we help?"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="md:col-span-2 space-y-2">
-                                        <label className="text-sm font-semibold text-gray-700 ml-1">Message</label>
-                                        <textarea
-                                            rows="5"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-primary-500 focus:ring-4 focus:ring-primary-50 outline-none transition-all duration-200 resize-none"
-                                            placeholder="Tell us more about your inquiry..."
-                                            required
-                                        ></textarea>
-                                    </div>
-                                    <div className="md:col-span-2 pt-4">
-                                        <button type="submit" className="w-full md:w-auto px-12 py-4 bg-primary-600 hover:bg-primary-700 text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all duration-300 flex items-center justify-center space-x-2">
-                                            <span>Send Message</span>
-                                            <Send className="w-5 h-5" />
-                                        </button>
-                                    </div>
-                                </form>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </div>
