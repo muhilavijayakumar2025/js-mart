@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, X, Mail, Info } from 'lucide-react';
+import { Menu, X, Info } from 'lucide-react';
 import logo from '../assets/JS Logo_Au-01.png';
 
 const Navbar = () => {
@@ -136,28 +136,22 @@ const Navbar = () => {
         <>
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             isScrolled 
-                ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200/50' 
-                : 'bg-transparent'
+                ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50' 
+                : 'bg-transparent backdrop-blur-sm'
         }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`flex justify-between items-center transition-all duration-300 ${
-                    isScrolled ? 'h-20' : 'h-24'
-                }`}>
+                <div className="flex justify-between items-center transition-all duration-300 h-20">
                     {/* Logo */}
                     <div className="flex items-center flex-shrink-0">
                         <a
                             href="#home"
                             onClick={(e) => handleNavClick(e, 'home')}
-                            className={`flex items-center space-x-2 transition-all duration-300 ${
-                                isScrolled ? 'scale-100' : 'scale-110'
-                            }`}
+                            className="flex items-center space-x-2 transition-all duration-300"
                         >
                             <img
                                 src={logo}
                                 alt="JS Mart Logo"
-                                className={`object-contain transition-all duration-300 ${
-                                    isScrolled ? 'h-14' : 'h-16'
-                                }`}
+                                className="object-contain transition-all duration-300 h-14"
                             />
                         </a>
                     </div>
@@ -189,22 +183,16 @@ const Navbar = () => {
 
                     {/* Sign In Button - Desktop */}
                     <div className="hidden md:flex items-center">
-                        {isScrolled ? (
-                            <button
-                                onClick={handleSignInClick}
-                                className="bg-primary-600 text-white px-6 py-2.5 rounded-full hover:bg-primary-700 transition-all duration-300 font-semibold text-sm shadow-lg hover:shadow-xl transform hover:scale-105"
-                            >
-                                Sign In
-                            </button>
-                        ) : (
-                            <a
-                                href="mailto:info@jsmart.com.au"
-                                className="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-5 py-2.5 rounded-full hover:bg-white/30 transition-all duration-300 font-semibold text-sm border border-white/30"
-                            >
-                                <Mail className="h-4 w-4" />
-                                info@jsmart.com.au
-                            </a>
-                        )}
+                        <button
+                            onClick={handleSignInClick}
+                            className={`px-6 py-2.5 rounded-full hover:bg-primary-700 transition-all duration-300 font-semibold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 ${
+                                isScrolled 
+                                    ? 'bg-primary-600 text-white' 
+                                    : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
+                            }`}
+                        >
+                            Sign In
+                        </button>
                     </div>
 
                     {/* Mobile menu button */}
@@ -241,7 +229,7 @@ const Navbar = () => {
                         ? 'translate-y-0 opacity-100' 
                         : '-translate-y-full opacity-0 pointer-events-none'
                 }`}
-                style={{ top: isScrolled ? '80px' : '96px' }}
+                style={{ top: '80px' }}
             >
                 <div className="px-4 py-6 space-y-2 max-h-[calc(100vh-120px)] overflow-y-auto">
                     {navLinks.map((link) => (

@@ -1,0 +1,19 @@
+# robots.txt for JS Mart
+# https://www.jsmart.com.au
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin or private areas (if any exist in the future)
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional - helps prevent overloading the server)
+# User-agent: *
+# Crawl-delay: 1
+
+# Sitemap location (update this when you have a sitemap.xml file)
+# Sitemap: https://www.jsmart.com.au/sitemap.xml
+

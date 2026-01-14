@@ -13,9 +13,9 @@ const About = () => {
                 </div>
                 <div className="w-full px-12 relative z-10 text-center">
                     <span className="inline-block px-12 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-bold mb-4 uppercase tracking-[0.2em]">About Us</span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6">About <span className="text-primary-400">S Mart Australia</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6">About <span className="text-primary-400">JS Mart</span></h1>
                     <p className="text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
-                        S Mart Australia is your trusted local supermarket bringing together the best of multicultural groceries for Australian communities.
+                        JS Mart is Dubbo's newest supermarket, bringing together the best of multicultural groceries for Australian communities.
                     </p>
                 </div>
             </section>
@@ -32,17 +32,17 @@ const About = () => {
                                 className="rounded-[3rem] shadow-2xl relative z-10 border-8 border-white"
                             />
                             <div className="absolute -bottom-10 -right-10 bg-white p-8 rounded-3xl shadow-xl z-20 border border-gray-100">
-                                <div className="text-4xl font-black text-primary-600 mb-1">15+</div>
-                                <div className="text-gray-500 font-bold uppercase tracking-widest text-xs">Years Experience</div>
+                                <div className="text-4xl font-black text-primary-600 mb-1">NEW</div>
+                                <div className="text-gray-500 font-bold uppercase tracking-widest text-xs">Supermarket</div>
                             </div>
                         </div>
                         <div className="lg:w-1/2 space-y-8">
-                            <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">Your Trusted Multicultural Grocery Store</h2>
+                            <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">Dubbo's Newest Multicultural Grocery Store</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
                                 From fresh fruits and vegetables to authentic international food items and daily household essentials, we are committed to offering quality products at affordable prices — all in a clean, friendly shopping environment.
                             </p>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                Whether you're looking for traditional ingredients or everyday groceries, S Mart Australia makes shopping simple and enjoyable.
+                                Whether you're looking for traditional ingredients or everyday groceries, JS Mart makes shopping simple and enjoyable. We're excited to serve the Dubbo community with fresh, quality products.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {[

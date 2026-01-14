@@ -109,10 +109,18 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg sm:text-xl font-bold mb-4 md:mb-6">Categories</h3>
                         <ul className="space-y-3 md:space-y-4">
-                            <li><Link to="/shop?category=Vegetables" className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors">Vegetables</Link></li>
-                            <li><Link to="/shop?category=Fruits" className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors">Fruits</Link></li>
-                            <li><Link to="/shop?category=Dairy" className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors">Dairy & Milk</Link></li>
-                            <li><Link to="/shop?category=Bakery" className="text-gray-400 hover:text-primary-500 text-sm sm:text-base transition-colors">Bakery Items</Link></li>
+                            <li>
+                                <span className="text-gray-400 text-sm sm:text-base">Vegetables</span>
+                            </li>
+                            <li>
+                                <span className="text-gray-400 text-sm sm:text-base">Fruits</span>
+                            </li>
+                            <li>
+                                <span className="text-gray-400 text-sm sm:text-base">Dairy & Milk</span>
+                            </li>
+                            <li>
+                                <span className="text-gray-400 text-sm sm:text-base">Bakery Items</span>
+                            </li>
                         </ul>
                     </div>
 

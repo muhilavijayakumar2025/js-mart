@@ -13,9 +13,9 @@ const ProductDetails = () => {
             </div>
 
             <div className="w-full px-12 relative z-10">
-                <Link to="/shop" className="flex items-center text-gray-300 hover:text-white mb-8 transition-colors group">
+                <Link to="/" className="flex items-center text-gray-300 hover:text-white mb-8 transition-colors group">
                     <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-                    <span className="font-bold">Back to Shop</span>
+                    <span className="font-bold">Back to Home</span>
                 </Link>
 
                 {/* Coming Soon Content */}
@@ -79,7 +79,7 @@ const ProductDetails = () => {
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                         <Link
-                            to="/shop"
+                            to="/"
                             className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold px-12 py-4 rounded-2xl shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-3"
                         >
                             <ShoppingCart className="h-6 w-6" />
